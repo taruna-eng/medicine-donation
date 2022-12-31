@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<script>
+
+function loadFile(ref) {
+            var image = document.getElementById('prev');
+            image.src = URL.createObjectURL(ref.files[0]);
+        };
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    
+    <nav class="navbar bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="pics.1/logooo.png" alt="" width="40" height="50" class="d-inline-block align-text-top">
+            <h1>
+                POST MEDICINE TO DONATE
+            </h1>
+           
+          </a>
+        </div>
+      </nav>
+    <!-- ............................................................................................. -->
+   
+<div class="container">
+    <form  method="post" class="row g-3" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailid" name="emailid">
+        </div>
+
+
+        <div class="row mt-2">
+        <div class="col-md-4">
+          <label for="inputName" class="form-label">Medicine Name</label>
+          <input type="text" class="form-control" id="mname" name="mname">
+        </div>
+
+        <div class="col-md-4">
+            <label for="inputpack" class="form-label">Packing</label>
+            <select id="pack" name="pack" class="form-select">
+                <option selected>Choose pack type</option>
+                <option>capsules</option>
+                <option>syrup</option>
+                
+            </select>
+        </div>
+
+        
+
+
+
+          <div class="col-md-4">
+            <label for="inputPassword4" class="form-label">Qty</label>
+            <input type="text" class="form-control" id="qty" name="qty">
+          </div>
+
+
+        </div>
+
+
+        <div class="row mt-2">
+           
+
+            <div class="col-md-4">
+                <label for="inputexpdate" class="form-label">Expiry Date</label>
+                <input type="date" class="form-control" id="expdate" name="expdate">
+              </div>
+
+           
+
+              <div class="col-md-4">
+                <label for="inputcom" class="form-label">Company</label>
+                <input type="text" class="form-control" id="comp" name="comp">
+              </div>
+
+
+
+        </div>
+
+<div class="row mt-2">
+    <div class="col-md-4">
+
+        <input type="file" name="pic" id="pic" accept=".jpg, .jpeg, .png" onchange="loadFile(this);">
+    </div>
+
+
+    <div class="col-md-4">
+        <img id="prev" src="" width="100" height="100" alt="">
+    </div>
+</div>
+
+
+
+
+<div class="col-md-12">
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" name="comment" id="comment" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Description</label>
+      </div>
+</div>
+
+
+
+
+
+        
+       
+       
+        <div class="col-12">
+          <input type="submit" formaction="/submit-process" class="btn btn-outline-success" value="List the Medicine">
+        </div>
+    </form>
+    </div>
+      
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+    crossorigin="anonymous"></script>
+  </body>
+</html>

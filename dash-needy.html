@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <style>
+    .card {
+      /* background-color: aqua; */
+      border: 3px green solid;
+    }
+
+    /* .navbar-brand mb-0 h1 {
+      font-size: 100px;
+      margin-left: 100px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    } */
+
+    .card-img-top {
+
+      /* border-radius: 50%; */
+      width:50%;
+      height: 10vw;
+      object-fit: cover;
+      border-radius: 80%;
+
+    }
+
+
+
+    .heading
+    {
+      height: 100px;
+      width:100%;
+      background-color: green;
+    }
+
+
+    .spn
+    {
+      font-size: 40px;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      margin-left: 650px;
+    }
+  </style>
+
+
+  <!-- <script>
+
+
+    $(document).ready(function () {
+      //alert();
+      $("#update").click(function () {
+
+        var email = $("#txtEmailn").val();
+        var cpass = $("#txtPwdc").val();
+        //var currentpass=("#txtPwdc").val();
+
+        var newpass = $("#txtPwdn").val();
+
+        var url = "/chksetting?temail=" + email + "&cpass=" + cpass + "&npass=" + newpass;
+
+        $.get(url, function (response) {
+          alert("updated");
+        })
+
+
+
+      })
+    })
+
+  </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- As a link -->
+  <form method="get">
+    <div class="heading">
+      <span class="spn">NEEDY</span>
+    </div>
+    <!-- ................................................................................................... -->
+
+
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col-md-3">
+          <div class="card">
+            <center>
+            <img src="pics.1/progreen.jpg" class="card-img-top" height="250px" width="50px">
+            </center>
+            <div class="card-body">
+
+
+              <center>
+                <a href="profile-needy.html" class="btn btn-outline-success">profile</a>
+              </center>
+            </div>
+          </div>
+        </div>
+        <!-- ....................................... ..................................................................-->
+        <div class="col-md-3">
+          <div class="card">
+            <center>
+              <img src="pics.1/medicinegree.webp" style="background-size:contain;" class="card-img-top" height="250px"
+                width="50px">
+            </center>
+            <div class="card-body">
+
+
+              <center>
+                <a href="needy-med-search.html" class="btn btn-outline-success">medicines</a>
+              </center>
+            </div>
+          </div>
+        </div>
+        <!-- .............................................................................................................................. -->
+
+
+        <div class="col-md-3">
+          <div class="card">
+            <center>
+            <img src="pics.1/llloo.jpg" class="card-img-top" height="250px" width="50px">
+            </center>
+            <div class="card-body">
+
+              <center>
+                <a href="#" class="btn btn-outline-success">Logout</a>
+              </center>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- <div class="col-md-3">
+          <div class="card">
+            <center>
+              <img src="pics.1/settti.jpg" class="card-img-top" height="250px" width="50px">
+            </center>
+            <div class="card-body">
+
+
+              <center>
+                <button class="btn btn-outline-success" type="button" data-bs-toggle="modal"
+                  data-bs-target="#settings">setttings</button>
+
+              </center>
+            </div>
+          </div>
+        </div> -->
+        <!-- 
+          SETTINGS MODAL.................................................................... -->
+
+
+        <!-- <form> -->
+
+          <!-- <div class="modal fade" id="settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3 row">
+                    <label for="form-label" class="form-label">Email</label>
+
+                    <div class="col-sm-12">
+                      <input type="email" class="form-control" id="txtEmailn" name="txtEmailn">
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="form-label">Current Password</label>
+                    <div class="col-sm-12">
+                      <input type="password" class="form-control" id="txtPwdc" name="txtPwdc">
+                    </div>
+                  </div>
+
+
+                  <div class="mb-3 row">
+                    <label for="inputPassword" class="form-label">New password</label>
+                    <div class="col-sm-12">
+                      <input type="password" class="form-control" id="txtPwdn" name="txtPwdn">
+                    </div>
+                  </div>
+
+                  
+
+
+                    <button type="button" class="btn btn-primary" id="update">update</button>
+
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+        </form> -->
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>

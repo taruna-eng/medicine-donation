@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="js/angular.min.js"></script>
+  </head>
+  
+    <script>
+
+var moduleKuch=angular.module("myModule",[]);
+        moduleKuch.controller("myController",function($scope,$http)
+        {
+            $scope.jsonAry=[];
+            $scope.fetchdonors=function()
+            {
+                $http.get("/fetchdonors").then(fxSuccess,function(response){
+                        alert(JSON.stringify(response.data));
+                   })
+                    
+
+
+
+                   function fxSuccess(response)
+                   {
+                    alert(JSON.stringify(response.data));
+                     $scope.jsonAry=response.data;
+                   }
+            }
+
+            $scope.doDelete=function(email,index)
+            {
+                   // alert(email+"  "+index);
+                   if(confirm("R U Sure?")==false)
+                        return;
+
+                   var url="/profile-delete-angular?emailidX="+email;
+                   $http.get(url).then(fxSuccess,function(response){
+                        alert(response.data);
+                   });
+                   function fxSuccess(response)
+                   {
+                        alert(response.data);
+                        $scope.fetchdonors();
+                   }
+            }
+        })
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <body ng-app="myModule" ng-controller="myController" ng-init=fetchdonors();>
+
+
+
+
+
+
+
+  <nav class="navbar bg-success">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+            Donor users
+        </a>
+    </div>
+</nav>
+
+
+<div class="container">
+
+<div class="row-mt-3">
+    <div class="col-md-12">
+
+
+
+
+<center>
+    <table class="table table-success table-sm" border="1" rules="all">
+        <tr bgcolor="green">
+            <th>Sr.No</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>city</th>
+            <th>proof</th>
+            <th>timing</th>
+            <th>proofpic</th>
+            <th>profilepic</th>
+            <th>Delete</th>
+
+            
+        </tr>
+        <tr ng-repeat="obj in jsonAry">
+            <td>{{$index}}</td>
+            <td>{{obj.emailid}}</td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.mobile}}</td>
+            <td>{{obj.address}}</td>
+            <td>{{obj.city}}</td>
+            <td>{{obj.prooftype}}</td>
+            <td>{{obj.timings}}</td>
+            <!-- <td>{{obj.proofpic}}</td>
+            <td>{{obj.profilepic}}</td> -->
+                <td align="center">
+                    <img src="uploads/{{obj.proofpic}}" alt="" width="100" height="100">
+                </td>
+
+                <td align="center">
+                    <img src="uploads/{{obj.profilepic}}" alt="" width="100" height="100">
+                </td>
+
+
+                <td>
+                    <input type="button" class="btn btn-success" value="Delete" ng-click="doDelete(obj.emailid,$index);">
+                </td>
+
+        </tr>
+    </table>
+</center>
+    </div>
+</div>
+</div>
+
+  </body>
+
+
+
+</html>

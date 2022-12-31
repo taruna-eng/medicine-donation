@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <script src="js/jquery-1.8.2.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script>
+
+
+
+        function loadFile1(ref) {
+            var image = document.getElementById('prev1');
+            image.src = URL.createObjectURL(ref.files[0]);
+        };
+
+        function loadFile2(ref) {
+            var image = document.getElementById('prev2');
+            image.src = URL.createObjectURL(ref.files[0]);
+        };
+
+
+
+
+       $(document).ready(function(){
+
+    
+    
+
+        $("#btnSearch").click(function(){
+            
+            
+          var txtemail=$("#email").val();
+          
+          var url="/getProfileObject?Email="+txtemail;
+          $.getJSON(url,function(responseKuchJSONAryObject)
+          {
+            if(responseKuchJSONAryObject.length==0)
+            alert("Invalid Id");
+            else
+              {
+                alert(JSON.stringify(responseKuchJSONAryObject));
+              
+             
+              $("#name1").val(responseKuchJSONAryObject[0].name);
+              $("#Mobile").val(responseKuchJSONAryObject[0].mobile);
+              $("#txtAddr").val(responseKuchJSONAryObject[0].address);
+              $("#city").val(responseKuchJSONAryObject[0].city);
+              $("#inputId").val(responseKuchJSONAryObject[0].prooftype);
+              $("#Ctime").val(responseKuchJSONAryObject[0].timings);
+              $("#prev1").prop("src","uploads/"+responseKuchJSONAryObject[0].proofpic);
+              $("#prev2").prop("src","uploads/"+responseKuchJSONAryObject[0].profilepic);
+              $("#hdn1").val(responseKuchJSONAryObject[0].proofpic);
+              $("#hdn2").val(responseKuchJSONAryObject[0].profilepic);
+                
+              
+             
+             
+            }
+        })
+    })
+
+
+
+       })
+
+
+
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <!-- As a link -->
+    <nav class="navbar bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+        </div>
+    </nav>
+
+    <!-- As a heading -->
+    <nav class="navbar bg-success">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">DONOR PROFILE</span>
+        </div>
+    </nav>
+
+    <!-- end of navbar.............. -->
+
+
+
+
+    <div class="container">
+
+        <form method="post" class="row g-3" enctype="multipart/form-data">
+            <input type="hidden" id="hdn1" name="hdn1">
+            <input type="hidden" id="hdn2" name="hdn2">
+
+
+
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="text" class="form-control" name="email" id="email">
+
+            </div>
+            <div class="col-md-2">
+                <label for="inputEmail4" class="form-label"> &nbsp;</label>
+                <input type="button" class="btn btn-outline-success form-control" id="btnSearch" name="btnSearch" value="Search">
+
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name1" name="name1">
+
+                </div>
+
+
+
+
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Mobile Number</label>
+                    <input type="text" class="form-control" id="Mobile" name="Mobile">
+
+                </div>
+
+
+
+            </div>
+
+
+            <!-- ............................................. -->
+
+            <div class="row mt-2">
+                <div class="col-md-8">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="txtAddr" name="txtAddr">
+
+                </div>
+
+
+
+
+
+
+                <div class="col-md-4">
+
+                    <input type="text" id="city" name="city" list="productName" />
+                    <datalist id="productName">
+                        <option value="bathinda">bathinda</option>
+                        <option value="barnala">barnala</option>
+                        <option value="patiala">patiala</option>
+                        
+                    </datalist>
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="inputId" class="form-label">Select Id Proof</label>
+                    <select id="inputId" name="inputId" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>adhaar card</option>
+                    </select>
+                </div>
+
+
+
+
+
+                <div class="col-md-6">
+                    <label for="inputcity" class="form-label">Contact time</label>
+                    <input type="text" class="form-control" id="Ctime" name="Ctime">
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <input type="file" name="profilePic1"id="profilePic1" accept=".jpg, .jpeg, .png" onchange="loadFile1(this);">
+                </div>
+                <div class="col-md-6">
+
+
+                    <input type="file" name="profilePic2" id="profilePic2"accept=".jpg, .jpeg, .png" onchange="loadFile2(this);">
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+
+                    <img id="prev1" src="" width="100" height="100" alt="">
+                </div>
+
+                <div class="col-md-6">
+
+                    <img id="prev2" src="" width="100" height="100" alt="">
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="col-12">
+
+                <input type="submit" formaction="/profile-process" class="btn btn-outline-success" value="Submit">
+
+                <input type="submit" formaction="/profile-update" class="btn btn-outline-success" value="Update">
+
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
