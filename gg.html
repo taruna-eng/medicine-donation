@@ -1,10 +1,12 @@
-<html>
-    <head>
-        <title>
-            document
-        </title>
-    </head>
-    <body>
-        <button>search</button>
-    </body>
-</html>
+var expresskuch= require("express.js");
+var path=require ("path");
+var filee=require("fileupload");
+var mysql=require("mysql");
+
+
+var app=expresskuch();
+app.listen(2005,function()
+{
+    console.log("server started");
+    
+})

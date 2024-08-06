@@ -20,7 +20,7 @@
       var pass = $("#txtPwd").val();
       var utype = $("#txtuser").val();
 
-      var url = "/signup?mail=" + mail + "&pass=" + pass + "&utype=" + utype;
+      var url = "/signup?mail=" + mail + "&pass=" + pass + "&utype=" + utype;  // this url will be sent to the server.
       $.get(url, function (response) {
 
         alert("signed up successfully");
@@ -28,11 +28,7 @@
     })
 
 
-
-        
-
-
-
+    
     $("#login").click(function () {
 
       var email = $("#txtEmail1").val();
@@ -83,20 +79,6 @@
     font-family: 'Times New Roman', Times, serif;
    }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <body>
@@ -235,7 +217,7 @@
         <div class="row mt-2">
           <div class="col-md-4">
             <div class="card">
-              <img src="pics.1/tanulast.jpg" width="100%" height="300px" alt="...">
+              <img src="pics.1/im2.jpg" width="100%" height="300px" alt="...">
               <div class="card-body">
                 <p class="card-text"><b>Developed by-Taruna Munjal
                 </b></p>

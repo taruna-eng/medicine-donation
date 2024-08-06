@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../repair shop"
+		},
+		{
+			"path": "../../../../OneDrive/Desktop/nodejs-fullstack-june-2022"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502,
+		"liveServer.settings.multiRootWorkspaceName": "repair shop"
+	}
+}
