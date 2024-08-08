@@ -4,8 +4,17 @@ var mysql = require("mysql");
 
 var path = require("path");
 const { report } = require("process");
+const port = process.env.PORT || 4000;
 var app = expressKuch();
 //         port   behavior
+
+
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+
+
 app.listen(2007, function () {
     console.log("Server Started");
 })
