@@ -15,9 +15,7 @@ app.listen(port, () => {
   })
 
 
-app.listen(2007, function () {
-    console.log("Server Started");
-})
+
 
 
 //api-url handler
