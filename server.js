@@ -30,6 +30,7 @@ app.use(expressKuch.static("public"));  //imp for using ajax....
 
 var dbConfiguration = {
     host: "44.226.145.213",
+      port: 3306,
     user: "root",
     password: "",
     database: "projectji"
