@@ -45,15 +45,6 @@ refDB.connect(function (errKuch) {
 })
 
 
-app.get("/", function (req, resp) {
-
-
-    var puraPath = process.cwd() + "/public/home.html";
-
-
-    resp.sendFile(puraPath);
-});
-
 
 app.get("/home-page", function (req, resp) {
     var fullPath = path.join(__dirname, "public", "index.html");
