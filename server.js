@@ -36,14 +36,6 @@ var dbConfiguration = {
     database: "projectji"
 }
 
-var refDB = mysql.createConnection(dbConfiguration);
-refDB.connect(function (errKuch) {
-
-    if (errKuch)
-        console.log(errKuch);
-    else
-        console.log("Connected to Server............");
-})
 
 
 
