@@ -4,18 +4,11 @@ var mysql = require("mysql");
 
 var path = require("path");
 const { report } = require("process");
-const port = process.env.PORT || 4000;
 var app = expressKuch();
 //         port   behavior
-
-
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
-
-
-
+app.listen(2007, function () {
+    console.log("Server Started");
+})
 
 
 //api-url handler
@@ -29,7 +22,7 @@ app.use(expressKuch.static("public"));  //imp for using ajax....
 
 
 var dbConfiguration = {
-    host: "",
+    host: "localhost",
     user: "root",
     password: "",
     database: "projectji"
@@ -44,6 +37,15 @@ refDB.connect(function (errKuch) {
         console.log("Connected to Server............");
 })
 
+
+app.get("/", function (req, resp) {
+
+
+    var puraPath = process.cwd() + "/public/home.html";
+
+
+    resp.sendFile(puraPath);
+});
 
 
 app.get("/home-page", function (req, resp) {
@@ -461,16 +463,6 @@ var dataAry = [ req.body.name1, req.body.Mobile, req.body.txtAddr, req.body.city
             resp.send("Inserted Successfully");
     })
 })
-
-
-
-
-
-
-
-
-
-
 
 
 
