@@ -22,20 +22,17 @@ app.use(expressKuch.static("public"));  //imp for using ajax....
 
 
 var dbConfiguration = {
+<<<<<<< HEAD
     host: "localhost",
+=======
+    host: "44.226.145.213",
+      port: 3306,
+>>>>>>> ee83c61c8bd70778969e4c78c02f356f71a2836c
     user: "root",
     password: "",
     database: "projectji"
 }
 
-var refDB = mysql.createConnection(dbConfiguration);
-refDB.connect(function (errKuch) {
-
-    if (errKuch)
-        console.log(errKuch);
-    else
-        console.log("Connected to Server............");
-})
 
 
 app.get("/", function (req, resp) {
