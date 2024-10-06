@@ -18,7 +18,7 @@ app.get("/hello", function (req, res) {
 })
 
 
-app.use(expressKuch.static("public"));  //imp for using ajax....
+app.use(expressKuch.static("public")); 
 
 
 var dbConfiguration = {
